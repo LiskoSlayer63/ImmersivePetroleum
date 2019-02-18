@@ -113,26 +113,6 @@ public class ImmersivePetroleum
 	
 	public static CreativeTabs creativeTab = new CreativeTabs(MODID)
 	{
-		@Override
-		public ItemStack getTabIconItem()
-		{
-			return ItemStack.EMPTY;
-		}
-		
-		@Override
-		public ItemStack getIconItemStack()
-		{
-			UniversalBucket bucket = ForgeModContainer.getInstance().universalBucket;
-			ItemStack stack = new ItemStack(bucket);
-            FluidStack fs = new FluidStack(IPContent.fluidCrudeOil, bucket.getCapacity());
-            IFluidHandlerItem fluidHandler = new FluidBucketWrapper(stack);
-			if (fluidHandler.fill(fs, true) == fs.amount)
-			{
-				return fluidHandler.getContainer();
-			}
-			
-			return new ItemStack(IPContent.blockFluidDiesel,1,0);
-		}
 		
 		@Override
 		@SideOnly(Side.CLIENT)
@@ -180,6 +160,20 @@ public class ImmersivePetroleum
 			}
 			
 			super.displayAllRelevantItems(list);
+		}
+
+		@Override
+		public ItemStack createIcon() {
+			UniversalBucket bucket = ForgeModContainer.getInstance().universalBucket;
+			ItemStack stack = new ItemStack(bucket);
+            FluidStack fs = new FluidStack(IPContent.fluidCrudeOil, bucket.getCapacity());
+            IFluidHandlerItem fluidHandler = new FluidBucketWrapper(stack);
+			if (fluidHandler.fill(fs, true) == fs.amount)
+			{
+				return fluidHandler.getContainer();
+			}
+			
+			return new ItemStack(IPContent.blockFluidDiesel,1,0);
 		}
 	};
 	

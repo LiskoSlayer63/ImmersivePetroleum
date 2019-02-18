@@ -206,14 +206,14 @@ public class IPContent
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
 	{
 		for(Block block : registeredIPBlocks)
-			event.getRegistry().register(block.setRegistryName(createRegistryName(block.getUnlocalizedName())));
+			event.getRegistry().register(block.setRegistryName(createRegistryName(block.getTranslationKey())));
 	}
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
 		for(Item item : registeredIPItems)
-			event.getRegistry().register(item.setRegistryName(createRegistryName(item.getUnlocalizedName())));
+			event.getRegistry().register(item.setRegistryName(createRegistryName(item.getTranslationKey())));
 	}
 
 	private static ResourceLocation createRegistryName(String unlocalized)

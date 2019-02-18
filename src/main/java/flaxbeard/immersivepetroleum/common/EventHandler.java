@@ -224,7 +224,7 @@ public class EventHandler
 		double px = TileEntityRendererDispatcher.staticPlayerX;
 		double py = TileEntityRendererDispatcher.staticPlayerY;
 		double pz = TileEntityRendererDispatcher.staticPlayerZ;
-		int y = Math.min((int)player.posY-2,player.getEntityWorld().getChunkFromBlockCoords(new BlockPos(chunkX, 0, chunkZ)).getLowestHeight());
+		int y = Math.min((int)player.posY-2,player.getEntityWorld().getChunk(new BlockPos(chunkX, 0, chunkZ)).getLowestHeight());
 		float h = (float)Math.max(32, player.posY-y+4);
 		Tessellator tessellator = Tessellator.getInstance();
 		BufferBuilder vertexbuffer = tessellator.getBuffer();

@@ -49,7 +49,7 @@ public class ItemBlockIPBase extends ItemBlock
 			this.block.getSubBlocks(tab, itemList);
 	}
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
 		return ((BlockIPBase) this.block).getUnlocalizedName(stack);
 	}

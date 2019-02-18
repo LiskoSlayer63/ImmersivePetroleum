@@ -28,7 +28,7 @@ public class BlockIPFluid extends BlockFluidClassic
 	public BlockIPFluid(String name, Fluid fluid, Material material)
 	{
 		super(fluid, material);
-		this.setUnlocalizedName(ImmersivePetroleum.MODID + "." + name);
+		this.setTranslationKey(ImmersivePetroleum.MODID + "." + name);
 		this.setCreativeTab(ImmersivePetroleum.creativeTab);
 		//ImmersivePetroleum.registerBlock(this, ItemBlock.class, name);
 		IPContent.registeredIPBlocks.add(this);
@@ -64,7 +64,7 @@ public class BlockIPFluid extends BlockFluidClassic
 
 
 	@Override
-	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity)
+	public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity)
 	{
 		if(potionEffects!=null && entity instanceof EntityLivingBase)
 		{
