@@ -27,6 +27,8 @@ eclipse/
 *.launch
 *.txt
 run/
+run_client/
+run_server/
 *.project
 *.classpath
 .settings/
